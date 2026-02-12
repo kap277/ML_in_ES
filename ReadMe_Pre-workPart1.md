@@ -52,19 +52,22 @@ qsub mnist.pbs
 qstat -u kperkins
 ```
 See prompt screenshot below:
+
 <img width="587" height="185" alt="image" src="https://github.com/user-attachments/assets/0d5e90b0-b705-4418-93e5-a3fbf1fbdbf7" />
+
 ## Uploading and Downloading Files
-I logged back into derecho and I
-I uploaded and downloaded a file using the folowing code
+I logged back into derecho and I uploaded and downloaded a file using the folowing code:
 ```
 scp C:/Users/ka_pe/Desktop/Classes/DeepLearningES/Bash_pbs.txt kperkins@derecho.hpc.ucar.edu:/glade/work/kperkins/Bash_pbs.txt
 scp kperkins@derecho.hpc.ucar.edu:/glade/work/kperkins/mnist_simple.py C:/Users/ka_pe/Desktop/Classes/DeepLearningES/mnist_simple.py
 
 "C:\Users\ka_pe\Desktop\Classes\DeepLearningES\Bash_pbs.txt"
 ```
-But I had trouble moving files from my computer directly.
+But I had trouble moving files from my computer directly:
+
 <img width="1151" height="555" alt="image" src="https://github.com/user-attachments/assets/8cefa882-5b7c-4521-8462-ac3efb5be044" />
-So I tried moving between folders on ucar and that worked.
+
+So I tried moving between folders on ucar.
 
 ## Editing Scripts Remotely
 I edited .pbs script using nano.
@@ -85,7 +88,11 @@ I opend a Python conda virtual environment:
 <img width="935" height="636" alt="image" src="https://github.com/user-attachments/assets/4c596f57-59a2-4797-96a1-dfaf8ab1392f" />
 
 ## Clone Your Repository
+Finally I cloned my repository:
 ```
 git clone https://github.com/kap277/ML_in_ES.git
 ```
+And that seemed to have worked:
+
+<img width="884" height="173" alt="image" src="https://github.com/user-attachments/assets/5452a91b-bd59-4f5c-9480-d2517d61d176" />
 
