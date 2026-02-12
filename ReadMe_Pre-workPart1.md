@@ -60,7 +60,7 @@ See prompt screenshot below:
 I logged back into derecho and I uploaded and downloaded a file using the folowing code:
 ```
 scp C://Users/ka_pe/Desktop/Classes/DeepLearningES/Bash_pbs.txt kperkins@derecho.hpc.ucar.edu:/glade/work/kperkins/Bash_pbs.txt
-scp kperkins@derecho.hpc.ucar.edu:/glade/work/kperkins/mnist_simple.py C:/Users/ka_pe/Desktop/Classes/DeepLearningES/mnist_simple.py
+scp kperkins@derecho.hpc.ucar.edu:/glade/work/kperkins/mnist_simple.py C://Users/ka_pe/Desktop/Classes/DeepLearningES/mnist_simple.py
 
 ```
 But I had trouble moving files from my computer directly:
