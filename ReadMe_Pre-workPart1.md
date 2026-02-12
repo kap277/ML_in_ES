@@ -32,7 +32,7 @@ qstat -u kperkins
 This did not work and I got the following error:
 qsub: Illegal attribute or resource value Resource_List.select
 
-I decided to try a different script and edited the simple_job.pbs file to the following:
+I forgot to create the environment and decided to try a different script and edited the simple_job.pbs file to the following:
 ```
 #!/bin/bash
 #PBS -N SimpleJob
@@ -43,6 +43,7 @@ export TMPDIR=${SCRATCH}/${USER}/temp && mkdir -p $TMPDIR
 module load cuda
 module load conda
 module load python
+mamba create -n dl --file dl-linux-64.explicit.txt
 conda activate /glade/work/kperkins/conda-envs/dl
 python mnist_simple.py
 ```
@@ -68,6 +69,10 @@ But I had trouble moving files from my computer directly:
 <img width="1151" height="555" alt="image" src="https://github.com/user-attachments/assets/8cefa882-5b7c-4521-8462-ac3efb5be044" />
 
 So I tried moving between folders on ucar.
+
+I also tried through the Globus GUI but couldn't authenticate.
+
+<img width="730" height="533" alt="image" src="https://github.com/user-attachments/assets/ef8422e2-0ecb-4091-be01-240545a813b2" />
 
 ## Editing Scripts Remotely
 I edited .pbs script using nano.
