@@ -24,3 +24,8 @@ module load conda
 conda activate /glade/work/kperkins/conda-envs/dl
 python mnist_simple.py
 ```
+I then submitted the job and monitored it using the code below:
+```
+qsub simple_job.pbs
+qstat -u kperkins
+```
