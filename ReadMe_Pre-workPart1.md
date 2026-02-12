@@ -62,9 +62,18 @@ scp kperkins@derecho.hpc.ucar.edu:/glade/work/kperkins/mnist_simple.py C:/Users/
 
 "C:\Users\ka_pe\Desktop\Classes\DeepLearningES\Bash_pbs.txt"
 ```
+But I had trouble moving files from my computer directly.
+<img width="1151" height="555" alt="image" src="https://github.com/user-attachments/assets/8cefa882-5b7c-4521-8462-ac3efb5be044" />
+So I tried moving between folders on ucar and that worked.
+
 ## Monitoring Resource Use
-I ran the following to check my respirce use.
+I ran the following to check my resource use.
 ```
-qstat -u your_username
+qstat -u kperkins
+ncar_accounting_report
+```
+## Clone Your Repository
+```
+git clone https://github.com/kperkins/your_repo.git
 ```
 
