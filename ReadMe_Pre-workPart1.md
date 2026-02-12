@@ -17,7 +17,7 @@ I used nano to create an empty .pbs file which I then edited as the folowing scr
 ```
 #!/bin/bash
 #PBS -N SimpleJob
-#PBS -l select=1:ncpus=1:mem=4GB:walltime=00:30:00
+#PBS -l select=1:ncpus=1:mem=4GB:walltime=00:05:00
 #PBS -j oe
 module load cuda
 module load conda
@@ -29,3 +29,42 @@ I then submitted the job and monitored it using the code below:
 qsub simple_job.pbs
 qstat -u kperkins
 ```
+This did not work and I got the following error:
+qsub: Illegal attribute or resource value Resource_List.select
+
+I decided to try a different script and edited the simple_job.pbs file to the following:
+```
+#!/bin/bash
+#PBS -N SimpleJob
+#PBS -l select=1:ncpus=1:mem=4GB:walltime=00:05:00
+#PBS -j oe
+### Set temp to scratch
+export TMPDIR=${SCRATCH}/${USER}/temp && mkdir -p $TMPDIR
+module load cuda
+module load conda
+module load python
+conda activate /glade/work/kperkins/conda-envs/dl
+python mnist_simple.py
+```
+That also didnt work so I ran the pbs file we edited from class the other day.
+```
+qsub mnist.pbs
+qstat -u kperkins
+```
+See prompt screenshot below:
+<img width="587" height="185" alt="image" src="https://github.com/user-attachments/assets/0d5e90b0-b705-4418-93e5-a3fbf1fbdbf7" />
+## Uploading and Downloading Files
+I logged back into derecho and I
+I uploaded and downloaded a file using the folowing code
+```
+scp C:/Users/ka_pe/Desktop/Classes/DeepLearningES/Bash_pbs.txt kperkins@derecho.hpc.ucar.edu:/glade/work/kperkins/Bash_pbs.txt
+scp kperkins@derecho.hpc.ucar.edu:/glade/work/kperkins/mnist_simple.py C:/Users/ka_pe/Desktop/Classes/DeepLearningES/mnist_simple.py
+
+"C:\Users\ka_pe\Desktop\Classes\DeepLearningES\Bash_pbs.txt"
+```
+## Monitoring Resource Use
+I ran the following to check my respirce use.
+```
+qstat -u your_username
+```
+
