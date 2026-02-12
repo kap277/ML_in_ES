@@ -59,18 +59,17 @@ See prompt screenshot below:
 ## Uploading and Downloading Files
 I logged back into derecho and I uploaded and downloaded a file using the folowing code:
 ```
-scp C:/Users/ka_pe/Desktop/Classes/DeepLearningES/Bash_pbs.txt kperkins@derecho.hpc.ucar.edu:/glade/work/kperkins/Bash_pbs.txt
+scp C://Users/ka_pe/Desktop/Classes/DeepLearningES/Bash_pbs.txt kperkins@derecho.hpc.ucar.edu:/glade/work/kperkins/Bash_pbs.txt
 scp kperkins@derecho.hpc.ucar.edu:/glade/work/kperkins/mnist_simple.py C:/Users/ka_pe/Desktop/Classes/DeepLearningES/mnist_simple.py
 
-"C:\Users\ka_pe\Desktop\Classes\DeepLearningES\Bash_pbs.txt"
 ```
 But I had trouble moving files from my computer directly:
 
 <img width="1151" height="555" alt="image" src="https://github.com/user-attachments/assets/8cefa882-5b7c-4521-8462-ac3efb5be044" />
 
-So I tried moving between folders on ucar.
+So I tried moving between folders on ucar (that works with just cp cmd).
 
-I also tried through the Globus GUI but couldn't authenticate.
+I also tried through the Globus GUI but couldn't authenticate fully.
 
 <img width="730" height="533" alt="image" src="https://github.com/user-attachments/assets/ef8422e2-0ecb-4091-be01-240545a813b2" />
 
