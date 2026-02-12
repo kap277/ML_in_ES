@@ -67,9 +67,11 @@ But I had trouble moving files from my computer directly.
 So I tried moving between folders on ucar and that worked.
 
 ## Editing Scripts Remotely
+I edited .pbs script using nano.
 ```
 nano simple_job.pbs
 ```
+<img width="542" height="285" alt="image" src="https://github.com/user-attachments/assets/88b3683e-584f-460b-a3f3-2003656211ec" />
 
 ## Monitoring Resource Use
 I ran the following to check my resource use.
