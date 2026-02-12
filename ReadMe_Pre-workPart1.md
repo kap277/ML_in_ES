@@ -66,14 +66,24 @@ But I had trouble moving files from my computer directly.
 <img width="1151" height="555" alt="image" src="https://github.com/user-attachments/assets/8cefa882-5b7c-4521-8462-ac3efb5be044" />
 So I tried moving between folders on ucar and that worked.
 
+## Editing Scripts Remotely
+```
+nano simple_job.pbs
+```
+
 ## Monitoring Resource Use
 I ran the following to check my resource use.
 ```
 qstat -u kperkins
 ncar_accounting_report
 ```
+## Using NCAR HPC Jupyter Hub
+I logged into https://jupyterhub.hpc.ucar.edu/ and started a derecho server with default values.
+I opend a Python conda virtual environment:
+<img width="935" height="636" alt="image" src="https://github.com/user-attachments/assets/4c596f57-59a2-4797-96a1-dfaf8ab1392f" />
+
 ## Clone Your Repository
 ```
-git clone https://github.com/kperkins/your_repo.git
+git clone https://github.com/kap277/ML_in_ES.git
 ```
 
