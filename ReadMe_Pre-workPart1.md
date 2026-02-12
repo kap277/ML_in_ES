@@ -13,7 +13,7 @@ cd /glade/work/kperkins
 ls
 ```
 ## Submitting Simple Jobs To Casper
-I used nano to create an empty .pbs file which I then edited as the folowing script:
+I used nano to create an empty .pbs file which I then edited to create the following script:
 ```
 #!/bin/bash
 #PBS -N SimpleJob
