@@ -100,3 +100,24 @@ And that seemed to have worked:
 
 <img width="884" height="173" alt="image" src="https://github.com/user-attachments/assets/5452a91b-bd59-4f5c-9480-d2517d61d176" />
 
+__________________________________________________________________________________________________________
+
+## The items below were updated after the deadline on 2/18/26 when I had more time to play around with the file copying (nothing done above before the deadline was touched).
+
+## Uploading and Downloading Files (UPDATE 2/18/26)
+I was able to upload and download files between my local machine and glade. 
+
+```
+cd /Users/ka_pe/Desktop/Classes/DeepLearningES/
+scp Bash_pbs.txt kperkins@casper.hpc.ucar.edu:/glade/work/kperkins/
+ssh -X kperkins@casper.hpc.ucar.edu
+cd /glade/work/kperkins/
+ls
+exit
+scp kperkins@casper.hpc.ucar.edu:/glade/work/kperkins/mnist_simple.py .
+ls
+```
+<img width="632" height="494" alt="image" src="https://github.com/user-attachments/assets/dccf7c65-2f31-4140-ba94-10481041d97d" />
+
+<img width="629" height="487" alt="image" src="https://github.com/user-attachments/assets/3e32bfc0-0f99-422a-99b7-9016fb926f3e" />
+
