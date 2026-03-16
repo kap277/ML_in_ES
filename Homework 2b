@@ -1,7 +1,7 @@
 # Homework 2b            
 ### Kelly Perkins     2026-3-16
 ## 3 a and b
-- I downloaded the MNIST dataset and plotted 10 random images using the following script
+- I downloaded the MNIST dataset and plotted 10 random images using the following script:
 ```
 import random
 import torch
