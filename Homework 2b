@@ -1,1 +1,51 @@
+# Homework 2b            
+### Kelly Perkins     2026-3-16
+## 3 a and b
+- I downloaded the MNIST dataset and plotted 10 random images using the following script
+```
+import random
+import torch
+from torchvision import datasets, transforms
+import matplotlib.pyplot as plt
 
+base_transform = transforms.ToTensor()
+
+train_ds = datasets.MNIST(
+    root='./data', train=True, download=True, transform=base_transform
+)
+
+# Pick 10 random indices from the training dataset
+indices = random.sample(range(len(train_ds)), 10)
+
+# Create a 2x5 grid
+fig, axes = plt.subplots(2, 5, figsize=(10, 4))
+
+for ax, idx in zip(axes.flatten(), indices):
+    img, label = train_ds[idx]
+
+    # img may be a tensor (C, H, W); squeeze channel for plotting
+    if img.ndim == 3:
+        img = img.squeeze(0)
+
+    ax.imshow(img, cmap="gray")
+    ax.set_title(f"Label: {label}")
+    ax.axis("off")
+
+plt.suptitle("Random MNIST Training Examples", fontsize=14)
+plt.tight_layout()
+plt.show()
+plt.savefig("mnist_random_examples.png", dpi=300)
+plt.close()
+
+```
+- This produced the following image where the numbers appeared to be labeled correctly.
+
+
+
+
+```
+ssh -X kperkins@casper.hpc.ucar.edu
+cd /glade/work/kperkins
+ls
+```
+## Submitting Simple Jobs To Casper
