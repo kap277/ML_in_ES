@@ -93,4 +93,8 @@ val_loader   = DataLoader(val_ds,   batch_size=BATCH_SIZE, shuffle=False, num_wo
 test_loader  = DataLoader(test_ds,  batch_size=BATCH_SIZE, shuffle=False, num_workers=2, pin_memory=True)
 
 ```
--Finally I plotted the data to ensure the labels were still correct and ran the full model.
+-Finally I plotted the data to ensure the labels were still correct.
+
+-And here is the result of running the full model first with the original code for a training/validation split that 
+
+-And the adapted code with the ~50/50 training/vlidation split.
