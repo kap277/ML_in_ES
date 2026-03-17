@@ -230,5 +230,6 @@ z2_loop[n, k] = total
 
 print("Loop logits shape:", z2_loop.shape)
 ```
--The resulting loop logits shape is was (32,10)
--This is as far as Ive gotten.
+-The resulting loop logits shape is was (32,10).
+
+-This is as far as Ive gotten so far.
