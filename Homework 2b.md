@@ -44,13 +44,13 @@ plt.close()
 
 ## 3c
 #
--I was a bit confused here because I couldn't tell if this was meant as a stand alone question since the title is "code a neural network to classify these images" then you get to the forward pass skeleton code in the next question. I may have thought this was meant to start to set up the training and validation sets for the rest of the questions but because the forward pass code says "do not edit" in the top sections and because of the title I am taking my best guess and treating this as a stand alone that we are meant to code a network and classify the images here before proceeding to write our own.
+- I was a bit confused here because I couldn't tell if this was meant as a stand alone question since the title is "code a neural network to classify these images" then you get to the forward pass skeleton code in the next question. I may have thought this was meant to start to set up the training and validation sets for the rest of the questions but because the forward pass code says "do not edit" in the top sections and because of the title I am taking my best guess and treating this as a stand alone that we are meant to code a network and classify the images here before proceeding to write our own.
 
--For the above reason I edited the mnist_simple.py script to awnser the questions here.
+- For the above reason I edited the mnist_simple.py script to awnser the questions here.
 
--I would use the cross-entropy loss function, specifically categorical cross-entropy becuase we are seeking to predict multiple classes (each hand written number) and it does well at comparing the predicted probability distribution of the raw data vs the true labeled distribution.
+- I would use the cross-entropy loss function, specifically categorical cross-entropy becuase we are seeking to predict multiple classes (each hand written number) and it does well at comparing the predicted probability distribution of the raw data vs the true labeled distribution for the multiple classes.
 
--I retained the code that normailzed and transformed the data from 0 to 1 and reloaded the normalized data.
+- I retained the code that normailzed and transformed the data from 0 to 1 and reloaded the normalized data.
 
 ```
 # Step C: define FINAL transform using computed global mean/std
@@ -77,12 +77,12 @@ test_ds = datasets.MNIST(
 )
 ```
 
--For a roughly 50/50 training/validation split I first edited the line in mnist_simple.py specifying the training size to only include half of the images:
+- For a roughly 50/50 training/validation split I first edited the line in mnist_simple.py specifying the training size to only include half of the images:
 
 ```
 TRAIN_SIZE = 30_000        # out of 60,000 MNIST train examples
 ```
--I then edited Step E to divide the full training set into two equal parts. I retained the random_split function so that the subsets wouldn't overlap and indicies of the labeled data would be handled appropriately. 
+- I then edited Step E to divide the full training set into two equal parts. I retained the random_split function so that the subsets wouldn't overlap and indicies of the labeled data would be handled appropriately. 
 
 ```
 # Step E: split training set into train + validation
@@ -94,7 +94,8 @@ train_loader = DataLoader(train_ds, batch_size=BATCH_SIZE, shuffle=True,  num_wo
 val_loader   = DataLoader(val_ds,   batch_size=BATCH_SIZE, shuffle=False, num_workers=2, pin_memory=True)
 test_loader  = DataLoader(test_ds,  batch_size=BATCH_SIZE, shuffle=False, num_workers=2, pin_memory=True)
 ```
--I plotted the data to ensure the labels were still correct.
+- I plotted the data to ensure the labels were still correct.
+  
 ```
 # Pick 10 random indices from the training dataset
 indices = random.sample(range(len(train_ds)), 10)
@@ -119,13 +120,13 @@ plt.savefig("mnist_random_examples2.png", dpi=300)
 plt.close()
 ```
 
--And here is the result of running the full model, first with the original code for a training/validation split that heavily favored the training data.
+- And here is the result of running the full model, first with the original code for a training/validation split that heavily favored the training data.
 ![alt_text](https://github.com/kap277/ML_in_ES/blob/main/MnistSimple.png?raw=true)
 
--And the adapted code with the ~50/50 training/validation split.
+- And the adapted code with the ~50/50 training/validation split.
 ![alt_text](https://github.com/kap277/ML_in_ES/blob/main/MnistSimpleED.png?raw=true)
 
--Next I populated the following for the forward pass skeleton code. I think I got it working with a combination of google searching and stackexchange searches/AI prompts.
+- Next I populated the following for the forward pass skeleton code. I think I got it working with a combination of google searching and stackexchange searches/AI prompts.
 
 ```
 import numpy as np
@@ -230,6 +231,6 @@ z2_loop[n, k] = total
 
 print("Loop logits shape:", z2_loop.shape)
 ```
--The resulting loop logits shape is was (32,10).
+- The resulting loop logits shape is was (32,10).
 
 -This is as far as Ive gotten so far.
