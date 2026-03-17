@@ -95,6 +95,29 @@ val_loader   = DataLoader(val_ds,   batch_size=BATCH_SIZE, shuffle=False, num_wo
 test_loader  = DataLoader(test_ds,  batch_size=BATCH_SIZE, shuffle=False, num_workers=2, pin_memory=True)
 ```
 -I plotted the data to ensure the labels were still correct.
+```
+# Pick 10 random indices from the training dataset
+indices = random.sample(range(len(train_ds)), 10)
+
+# Create a 2x5 grid
+fig, axes = plt.subplots(2, 5, figsize=(10, 4))
+
+for ax, idx in zip(axes.flatten(), indices):
+    img, label = train_ds[idx]
+
+    # img may be a tensor (C, H, W); squeeze channel for plotting
+    if img.ndim == 3:
+        img = img.squeeze(0)
+
+    ax.imshow(img, cmap="gray")
+    ax.set_title(f"Label: {label}")
+    ax.axis("off")
+
+plt.suptitle("Random MNIST Training Examples 2", fontsize=14)
+plt.tight_layout()
+plt.savefig("mnist_random_examples2.png", dpi=300)
+plt.close()
+```
 
 -And here is the result of running the full model, first with the original code for a training/validation split that heavily favored the training data.
 
