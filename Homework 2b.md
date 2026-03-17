@@ -125,3 +125,110 @@ plt.close()
 -And the adapted code with the ~50/50 training/validation split.
 ![alt_text](https://github.com/kap277/ML_in_ES/blob/main/MnistSimpleED.png?raw=true)
 
+-Next I populated the following code for the from the forward pass skeleton code. I honestly don't fully understand it but I think I got it working with a combination of google searching and stackexchange/AI prompts.
+
+```
+import numpy as np
+import torch
+import torchvision
+import torchvision.transforms as transforms
+
+# ============================================================
+# MNIST LOADING (do NOT edit this section)
+# ============================================================
+
+transform = transforms.ToTensor()
+
+mnist = torchvision.datasets.MNIST(
+    root="./data",
+    train=True,
+    download=True,
+    transform=transform
+)
+
+loader = torch.utils.data.DataLoader(
+    mnist,
+    batch_size=32,
+    shuffle=True
+)
+
+
+images, labels = next(iter(loader))
+X = images.numpy().reshape(images.shape[0], -1)
+
+print("X shape:", X.shape)   # should be (B, 784)
+
+# ============================================================
+# NETWORK DIMENSIONS + PARAMETERS (do NOT edit)
+# ============================================================
+
+B = X.shape[0]
+input_size = 784
+hidden_size = 64
+output_size = 10
+
+np.random.seed(0)
+
+W1 = np.random.randn(input_size, hidden_size)
+b1 = np.zeros((1, hidden_size))
+
+W2 = np.random.randn(hidden_size, output_size)
+b2 = np.zeros((1, output_size))
+
+# ============================================================
+# VERSION A: FOR-LOOP FORWARD PASS (fill in math)
+# ============================================================
+
+z1_loop = np.zeros((B, hidden_size))
+a1_loop = np.zeros((B, hidden_size))
+z2_loop = np.zeros((B, output_size))
+
+# ----- Input -> Hidden -----
+for n in range(B):                    # loop over batch
+    for j in range(hidden_size):      # hidden neurons
+
+        total = 0.0
+
+        # TODO:
+        # Compute weighted sum from inputs
+        for i in range(input_size):
+            total += X[n, i] * W1[i, j]
+
+        # TODO:
+        # Add bias for neuron j
+total = total + b1[0,j]
+
+
+        # TODO:
+        # Store in z1_loop[n, j]
+z1_loop[n,j] = total
+
+
+# ----- ReLU activation -----
+for n in range(B):
+    for j in range(hidden_size):
+        a1_loop[n, j] = max(0.0, z1_loop[n, j])
+
+# ----- Hidden -> Output -----
+for n in range(B):
+    for k in range(output_size):      # output neurons
+
+        total = 0.0
+
+        # TODO:
+        # Compute weighted sum from hidden activations
+        for h in range(hidden_size):
+            total += a1_loop[n, j] * W2[j, k]
+
+        # TODO:
+        # Add output bias
+total = total + b2[0, k]
+
+        # TODO:
+        # Store in z2_loop[n, k]
+z2_loop[n, k] = total
+
+print("Loop logits shape:", z2_loop.shape)
+```
+-The resulting loop logits shape is was (32,10)
+-This is as far as Ive gotten.
