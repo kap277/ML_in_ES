@@ -123,5 +123,5 @@ plt.close()
 ![alt_text](https://github.com/kap277/ML_in_ES/blob/main/MnistSimple.png?raw=true)
 
 -And the adapted code with the ~50/50 training/validation split.
-![alt_text]()
+![alt_text](https://github.com/kap277/ML_in_ES/blob/main/MnistSimpleED.png?raw=true)
 
