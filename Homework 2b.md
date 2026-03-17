@@ -125,7 +125,7 @@ plt.close()
 -And the adapted code with the ~50/50 training/validation split.
 ![alt_text](https://github.com/kap277/ML_in_ES/blob/main/MnistSimpleED.png?raw=true)
 
--Next I populated the following code for the from the forward pass skeleton code. I honestly don't fully understand it but I think I got it working with a combination of google searching and stackexchange/AI prompts.
+-Next I populated the following for the forward pass skeleton code. I think I got it working with a combination of google searching and stackexchange searches/AI prompts.
 
 ```
 import numpy as np
