@@ -42,10 +42,15 @@ plt.close()
 
 ![alt text](https://github.com/kap277/ML_in_ES/blob/main/Figure_1.png?raw=true "Random MNIST Training Example")
 
+## 3c
+#
+-I was a bit confused here because I couldn't tell if this was meant as a stand alone question since the title is "code a neural network to classify these images" then you get to the forward pass skeleton code in the next question. I may have thought this was meant to start to set up the training and validation sets for the rest of the questions but because the forward pass code says "do not edit" in the top sections and because of the title I am taking my best guess and treating this as a stand alone that we are meant to code a network and classify the images here before proceeding to write our own.
+-For the above reason I edited the mnist_simple.py script to awnser the questions here.
+
+-
 
 ```
 ssh -X kperkins@casper.hpc.ucar.edu
 cd /glade/work/kperkins
 ls
 ```
-## Submitting Simple Jobs To Casper
